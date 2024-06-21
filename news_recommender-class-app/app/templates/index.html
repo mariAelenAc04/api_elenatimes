@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Elena Times</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/static/images/logo.png" alt="Logo">
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <a href="#" class="contact-btn">Contact us</a>
+        </nav>
+    </header>
+    <main>
+        <div class="hero">
+            <h1>Explore News by Category</h1>
+            <p>Dive into the latest news stories across various categories. Navigate with ease and stay informed with Elena Times.</p>
+            <form id="text-form">
+                <label for="text">Enter your text</label>
+                <input type="text" id="text" name="text" required>
+                <button type="submit">Classify and recommend</button>
+            </form>
+            <div id="results" style="display: none;">
+                <h2>News Category: <span id="news-category"></span></h2>
+                <h3>You might like:</h3>
+                <ul id="recommendations-list"></ul>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.getElementById('text-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const response = await fetch('/classify_and_recommend', {
+                method: 'POST',
+                body: formData,
+            });
+            const result = await response.json();
+            document.getElementById('news-category').textContent = result.category;
+            const recommendationsList = document.getElementById('recommendations-list');
+            recommendationsList.innerHTML = '';
+            result.recommendations.forEach(rec => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<a href="${rec.link}">${rec.headline}</a> by ${rec.authors}`;
+                recommendationsList.appendChild(listItem);
+            });
+            document.getElementById('results').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

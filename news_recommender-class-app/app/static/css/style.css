@@ -1,0 +1,136 @@
+/* static/css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    }
+    
+    header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    }
+    
+    .logo img {
+    width: 120px;
+    }
+    
+    nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    }
+    
+    nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    }
+    
+    .contact-btn {
+    background-color: #094043;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    }
+    
+    .contact-btn
+    {
+    background-color: #094043;
+    }
+    
+    .hero {
+    text-align: center;
+    padding: 2rem 1rem;
+    }
+    
+    .hero h1 {
+    font-size: 2.5rem;
+    color: #333;
+    }
+    
+    .hero p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+    }
+    
+    form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    }
+    
+    form label {
+    font-size: 1rem;
+    color: #333;
+    text-align: left;
+    }
+    
+    form input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    }
+    
+    form button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #147b87;;
+    color: #fff;
+    }
+    
+    form button
+    {
+    background-color: #147b87;;
+    }
+    
+    #results {
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: left;
+    }
+    
+    #results h2, #results h3 {
+    font-size: 1.5rem;
+    color: #333;
+    }
+    
+    #recommendations-list {
+    list-style: none;
+    padding: 0;
+    }
+    
+    #recommendations-list li {
+    margin-bottom: 1rem;
+    }
+    
+    #recommendations-list li a {
+    text-decoration: none;
+    color: #0694a7;
+    }
+    
+    #recommendations-list li a
+    {
+    text-decoration: underline;
+    }
